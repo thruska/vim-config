@@ -53,8 +53,8 @@ set background=dark
 "colorscheme mustang
 "let g:solarized_termcolors=256
 "colorscheme torte
-colorscheme solarized
-"colorscheme wombat
+"colorscheme solarized
+colorscheme wombat
 "colorscheme lucius
 "hi Normal ctermbg=NONE
 
@@ -74,6 +74,12 @@ map <Leader>l :bn <CR>
 map <Leader>j :tabNext <CR>
 map <Leader>k :tabprevious <CR>
 
+" close buffer without closing windows (bclose.vim)
+map <M-W> <Plug>Kwbd
+
+nmap ]c <Plug>GitGutterNextHunk
+nmap [c <Plug>GitGutterPrevHunk
+
 com! FormatJSON %!python -m json.tool
 
 let g:ctrlp_map = '<c-p>'
@@ -82,6 +88,8 @@ let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
 let g:airline#extensions#tabline#enabled = 1
 
-filetype plugin on
+"filetype plugin on
 " Alternative: use the following to also enable language-dependent indenting.
-filetype plugin indent on
+"filetype plugin indent on
+
+autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent
