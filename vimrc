@@ -75,7 +75,7 @@ map <Leader>j :tabNext <CR>
 map <Leader>k :tabprevious <CR>
 
 " close buffer without closing windows (bclose.vim)
-map <M-W> <Plug>Kwbd
+map <Leader>w <Plug>Kwbd
 
 nmap ]c <Plug>GitGutterNextHunk
 nmap [c <Plug>GitGutterPrevHunk
