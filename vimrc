@@ -94,3 +94,5 @@ let g:airline#extensions#tabline#enabled = 1
 "filetype plugin indent on
 
 autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 autoindent
+
