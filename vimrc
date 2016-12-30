@@ -59,6 +59,7 @@ colorscheme wombat
 "hi Normal ctermbg=NONE
 
 hi Normal guibg=NONE ctermbg=NONE
+highlight NonText ctermbg=none
 
 set colorcolumn=0
 "highlight ColorColumn ctermbg=6
