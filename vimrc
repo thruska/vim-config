@@ -70,10 +70,12 @@ let g:fuf_file_exclude = '\vcache/'
 map <A-S-o> :FufCoverageFile <CR>
 map <F5> :e <CR>
 map <F2> :NERDTreeToggle <CR>
+map <F3> :NERDTreeFind <CR>
 map <Leader>h :bp <CR>
 map <Leader>l :bn <CR>
 map <Leader>j :tabNext <CR>
 map <Leader>k :tabprevious <CR>
+nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " close buffer without closing windows (bclose.vim)
 map <Leader>w <Plug>Kwbd
@@ -95,4 +97,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 autoindent
+
+
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 
