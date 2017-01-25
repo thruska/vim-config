@@ -75,6 +75,8 @@ map <Leader>h :bp <CR>
 map <Leader>l :bn <CR>
 map <Leader>j :tabNext <CR>
 map <Leader>k :tabprevious <CR>
+map <Leader>s :Gstatus <CR>
+map <Leader>c :Gcommit <CR>
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " close buffer without closing windows (bclose.vim)
