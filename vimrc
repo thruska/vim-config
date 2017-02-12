@@ -1,7 +1,28 @@
+" Hide buffers instead of closing them when switching to another buffer.
+" This allows to maintain the undo history.
+set hidden
+
+set backspace=indent,eol,start
+                    " allow backspacing over everything in insert mode
+
+"set copyindent    " copy the previous indentation on autoindenting
+
+set smartcase     " ignore case if search pattern is all lowercase,
+                    "    case-sensitive otherwise
+
+set incsearch     " show search matches as you type
+
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
+
+set pastetoggle=<F2>
+nnoremap ; :
+nmap <silent> ,/ :nohlsearch<CR>
 
 
 set paste
@@ -77,6 +98,7 @@ map <Leader>j :tabNext <CR>
 map <Leader>k :tabprevious <CR>
 map <Leader>g :Gstatus <CR>
 map <Leader>c :Gcommit <CR>
+map <Leader>d :Gdiff <CR>
 map <Leader>s :w <CR>
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
@@ -85,6 +107,10 @@ map <Leader>w <Plug>Kwbd
 
 nmap ]c <Plug>GitGutterNextHunk
 nmap [c <Plug>GitGutterPrevHunk
+map [q :cprev <CR>
+map ]q :cnext <CR>
+map [Q :cfirst <CR>
+map [Q :clast <CR>
 
 com! FormatJSON %!python -m json.tool
 
@@ -104,3 +130,5 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 autoindent
 
 set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee /dev/null %
