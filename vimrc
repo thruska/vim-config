@@ -20,7 +20,7 @@ set shiftwidth=4
 set expandtab
 set number
 
-set pastetoggle=<F2>
+set pastetoggle=<F4>
 nnoremap ; :
 nmap <silent> ,/ :nohlsearch<CR>
 
@@ -31,7 +31,7 @@ set ruler
 set hlsearch
 set ignorecase
 set autoread
-set cursorline
+"set cursorline
 set modeline
 syntax on
 set relativenumber
@@ -67,20 +67,20 @@ set directory=~/tmp/vim,/tmp
 " Clear SignColumn background color
 "highlight clear SignColumn
 
-"set background=dark
-"set background=dark
-set background=dark
+set background=light
+"set background=light
 "Set default color scheme
 "colorscheme mustang
 "let g:solarized_termcolors=256
 "colorscheme torte
 "colorscheme solarized
-colorscheme wombat
+"colorscheme wombat
+"colorscheme default
 "colorscheme lucius
 "hi Normal ctermbg=NONE
 
-hi Normal guibg=NONE ctermbg=NONE
-highlight NonText ctermbg=none
+"hi Normal guibg=NONE ctermbg=NONE
+"highlight NonText ctermbg=none
 
 set colorcolumn=0
 "highlight ColorColumn ctermbg=6
@@ -101,6 +101,7 @@ map <Leader>c :Gcommit <CR>
 map <Leader>d :Gdiff <CR>
 map <Leader>s :w <CR>
 nnoremap <F5> :buffers<CR>:buffer<Space>
+map <Leader>a :!git add '%:p' <CR><CR>
 
 " close buffer without closing windows (bclose.vim)
 map <Leader>w <Plug>Kwbd
